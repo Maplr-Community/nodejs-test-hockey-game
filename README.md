@@ -1,7 +1,3 @@
-# ⚠️ Ne pas envoyer à un candidat
-
-
-
 ## Test Développeur Node.js intermédiaire
 
 ## Objectif du test
