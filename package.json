@@ -1,0 +1,14 @@
+{
+  "name": "test-nodejs-hockey-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Doe",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
