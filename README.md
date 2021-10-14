@@ -75,14 +75,28 @@ Team
 ### GET /api/team/{year}
 
 - Requête: Year dans l'URI
-
 - Réponse: Objet Team (Voir modèle ci-dessus)
-
 - Status: 200 OK
 
-  http://localhost:8080/api/team/2020 { "id":2, "coach":"Dominique Ducharme", "year":"2020", "players":[ { "number":31, "name":"Carey", "lastname":"Price", "position":"goaltender" }, { "number":14, "name":"Nick", "lastname":"Suzuki", "position":"forward" }, { "number":15, "name":"Jesperi", "lastname":"Kotkaniemi", "position":"forward" }, { "number":71, "name":"Jake", "lastname":"Evans", "position":"forward" }, { "number":27, "name":"Alexander", "lastname":"Romanov", "position":"defenseman" }, { "number":6, "name":"Shea", "lastname":"Weber", "position":"defenseman", "isCaptain" : true } ] }
+```
+http://localhost:8080/api/team/2020 --header "Content-Type:application/json"
 
-  http://localhost:8080/api/team/2019 { "id":1, "coach":"Dominique Ducharme", "year":"2019", "players":[ { "number":31, "name":"Carey", "lastname":"Price", "position":"goaltender" }, { "number":14, "name":"Nick", "lastname":"Suzuki", "position":"forward" }, { "number":15, "name":"Jesperi", "lastname":"Kotkaniemi", "position":"forward" }, { "number":71, "name":"Jake", "lastname":"Evans", "position":"forward" }, { "number":27, "name":"Alexander", "lastname":"Romanov", "position":"defenseman" }, { "number":6, "name":"Shea", "lastname":"Weber", "position":"defenseman", "isCaptain" : true } ] }
+{
+    "id": 1,
+    "coach": "Dominique Ducharme"
+    "year" : 2020
+    "players": [
+        {
+            "number": 99,
+            "name": "John",
+            "lastname": "Doe",
+            "position": "defenseman",
+            "isCaptain" : false
+        }
+        [...]
+    ]
+}
+```
 
 ### POST /api/team/{Year}
 
@@ -91,7 +105,7 @@ Team
 - Status: 201 CREATED
 
 ```
-http://localhost:8080/api/player --header "Content-Type:application/json"
+http://localhost:8080/api/player/2020 --header "Content-Type:application/json"
 
 {
   "number":99,
@@ -102,11 +116,23 @@ http://localhost:8080/api/player --header "Content-Type:application/json"
 }
 ```
 
-### PUT /api/player/captain/{ID}
+### PUT /api/player/{ID}/captain/
 
 - Requête: ID du joueur dans l'URI
 - Réponse: Objet Player
 - Status: 200 OK
+
+```
+http://localhost:8080/api/player/9/captain
+
+{
+  "number":99,
+  "name":"Antonin",
+  "lastname":"Bouscarel",
+  "position":"forward",
+  "isCaptain" : true
+}
+```
 
 ## Validation des endpoints
 
